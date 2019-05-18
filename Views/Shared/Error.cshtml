@@ -1,0 +1,51 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error - Project Social Network</title>
+    @Styles.Render("~/Content/css")
+    <link href='~/Content/vendors/font-awesome/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="container body">
+        <div class="main_container">
+            <!-- page content -->
+            <div class="col-md-12">
+                <div class="col-middle">
+                    <div class="text-center text-center">
+                        <h1 class="error-number">500</h1>
+                        <h2>Falha de Processamento</h2>
+                        <p>
+                            Necessario realizar o login para ter acesso ao sistema<a href="#"></a>
+                        </p>
+                        <div class="mid_center">
+                            <form>
+                                <div class="col-xs-12 form-group pull-right top_search">
+                                    <div class="input-group">
+                                        <span class="input-group-btn">
+                                            <a class="btn btn-default" href="@Url.Action("Login", "Autentication")">Login!</a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /page content -->
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/js")
+    @Scripts.Render("~/bundles/inputmask")
+</body>
+</html>

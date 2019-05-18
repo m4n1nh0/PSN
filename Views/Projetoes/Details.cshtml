@@ -1,0 +1,219 @@
+﻿@model PSN2018.Models.Projeto
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detahes do Projeto</h2>
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>@Html.DisplayFor(model => model.strDsc)</h2>
+                
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <ul class="stats-overview">
+                        <li>
+                            <span class="name"> Conclusão em: </span>
+                            <span class="value text-success">@Model.dteCriacao.AddMonths(5).ToShortDateString()</span>
+                        </li>
+                        <li>
+                            <span class="name"> Criado em: </span>
+                            <span class="value text-success">@Model.dteCriacao.ToShortDateString()</span>
+                        </li>
+                        <li>
+                            <span class="name"> Tempo Decorrido: </span>
+                            <span class="value text-success">@DateTime.Now.Subtract(Model.dteCriacao).Days Dias</span>
+                        </li>
+                        <li class="hidden-phone">
+                            <span class="name"> O projeto terá atraso? </span>
+                            <span class="value text-success"> Não. </span>
+                        </li>
+                    </ul>
+                   @using (Html.BeginForm())
+                   {
+                       foreach (var itemk in ViewBag.kanbam)
+                       {
+                        <div id="kanban">
+                            <h2>Kanban @Model.strDsc</h2>
+                            @foreach (var items in ViewBag.Sprint)
+                            {
+                                <div class="column">
+                                    <div class="header">
+                                        <h2>@items.strDsc</h2>
+                                    </div>
+                                    @{ int id = @items.intSprintID;
+                                        var cor = "";
+                                      }
+                                    @switch (id)
+                                    {
+                                        case 0:
+                                            cor = "red";
+                                            break;
+                                        case 1:
+                                            cor = "yellow";
+                                            break;
+                                        case 2:
+                                            cor = "yellow";
+                                            break;
+                                        case 3:
+                                            cor = "yellow";
+                                            break;
+                                        case 4:
+                                            cor = "green";
+                                            break;
+
+                                    }
+                                    <div id="@id" kanban-column-id="@id" class="tasksarea @cor">
+                                        @foreach (var ativ in ViewBag.Ativi)
+                                        {
+                                            if (ativ.intStatus == 0 && ativ.intSprintID_FK == items.id)
+                                            {
+                                                <div id="@ativ.id" class="task ui-draggable ui-draggable-handle">
+                                                    <h3 style="word-wrap: break-word;">Atividade</h3>
+                                                    <p style="word-wrap: break-word;">@ativ.strDsc</p>
+                                                    @if (id < 4)
+                                                    {
+                                                        <p><input type="checkbox" name="ativs" value="@ativ.id" />Adiantar</p>
+                                                    }
+                                                    else
+                                                    {
+                                                        <p><input type="checkbox" name="ativs" value="@ativ.id" />Voltar</p>
+                                                    }
+                                                </div>
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                             }
+                        </div>
+                        <br/>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Anterior" name="BtnPrev" class="btn btn-danger" />
+                                <input type="submit" value="Proximo" name="BtnProx" class="btn btn-success" />
+                            </div>
+                        </div>
+                        <br/>
+                       }
+                     }
+                    <div>
+                       @using (Html.BeginForm())
+                                    {
+                        <h4>Comentários do Projeto</h4>
+                        <!-- end of user messages -->
+                        <div class="container">
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                        <br/>
+                        <div class="container">
+                            <input type="submit" value="Enviar" class="btn btn-success" />
+                        </div>
+                        <br/>
+                       }
+                        <ul class="messages">
+                            <li>
+                                <img src="~/Content/imagens/user.png" c class="avatar" alt="Avatar">
+                                <div class="message_date">
+                                    <h3 class="date text-info">28 às 21:57</h3>
+                                    <p class="month">Outubro</p>
+                                </div>
+                                <div class="message_wrapper">
+                                    <h4 class="heading">Elisrenan Barbosa</h4>
+                                    <blockquote class="message">Não estou conseguindo implementar a classe do cliente, está faltando algum requisito</blockquote>
+                                    <br />
+                                    
+                                </div>
+                            </li>
+                            <li>
+                                <img src="~/Content/imagens/user.png" c class="avatar" alt="Avatar">
+                                <div class="message_date">
+                                    <h3 class="date text-error">28 às 22:00</h3>
+                                    <p class="month">Outubro</p>
+                                </div>
+                                <div class="message_wrapper">
+                                    <h4 class="heading">Mariano Florencio</h4>
+                                    <blockquote class="message">Por favor verificar o Requisito Funcional RF 0018 do arquivo Documentos Extra.</blockquote>
+                                    <br />
+                                    
+                                </div>
+                            </li>
+                            <li>
+                                <img src="~/Content/imagens/user.png" c class="avatar" alt="Avatar">
+                                <div class="message_date">
+                                    <h3 class="date text-info">28 às 22:02</h3>
+                                    <p class="month">Outubro</p>
+                                </div>
+                                <div class="message_wrapper">
+                                    <h4 class="heading">Elisrenan Barbosa</h4>
+                                    <blockquote class="message">Ok!</blockquote>
+                                    <br />
+                                    
+                                </div>
+                            </li>
+                        </ul>
+                        <!-- end of user messages -->
+
+                    </div>
+
+                </div>
+                <!-- start project-detail sidebar -->
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <section class="panel">
+                        <div class="x_title">
+                            <h2>Objetivo do Projeto</h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="panel-body">
+                            
+                            <p>@Html.DisplayFor(model => model.strObjetivo)</p>
+                            <br />
+                            <div class="project_detail">
+
+                                @{ var nomCli = ViewBag.NomeCliente;}
+                                @{ var nomGp = ViewBag.NomeGerente;}
+                                <p class="title">Cliente: @nomCli</p>
+                                </br>
+                                <p class="title">Gerente de Projetos: @nomGp</p>
+
+                            </div>
+                            <br />
+                            <h5>Arquivos do Projeto</h5>
+                            
+                            
+                               
+                            <ul class="list-unstyled project_files">
+                             @foreach (PSN2018.Models.UploadFileResult up in ViewBag.ListaDocs)
+                             {
+                                 //if (Model.id == @up.intProjetoID_FK)
+                                 //{
+                                    <li>
+                                        <a href="@up.Caminho"><i class="fa fa-file-word-o"></i> @up.Nome</a>
+                                    </li>
+                                @*}*@
+                             }
+                            </ul>
+                            <br />
+                            
+                        </div>
+                    </section>
+                </div>
+                <!-- end project-detail sidebar -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<p>
+    @Html.ActionLink("Voltar", "Index", null, new { @class = "btn btn-primary" })
+</p>
+
+
+

@@ -1,0 +1,50 @@
+﻿@model PSN2018.Models.Chat
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Chat</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.dteData)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dteData)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.strCPFCNPJ_Sender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.strCPFCNPJ_Sender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.strCPFCNPJ_Receiver)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.strCPFCNPJ_Receiver)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.strMensagem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.strMensagem)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

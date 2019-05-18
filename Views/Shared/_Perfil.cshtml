@@ -1,0 +1,19 @@
+﻿<div class="profile clearfix">
+    <div class="profile_pic">
+       @if (Session["LoginCPFCNPJ"] != null)
+       {
+        <img src="@Url.Action("Imagem","Logins", new { strCPFCNPJ = Session["LoginCPFCNPJ"].ToString() })" alt="..." class="img-circle profile_img">
+       }else{
+        <img src="~/Content/imagens/user.png" alt="..." class="img-circle profile_img">
+       }
+    </div>
+    <div class="profile_info">
+        <span>Bem Vindo(a),</span>
+        <h2> @if (Session["LoginNOME"] != null)
+        {
+            @Session["LoginNOME"].ToString()
+        }
+        </h2>
+    </div>
+    <div class="clearfix"></div>
+</div>

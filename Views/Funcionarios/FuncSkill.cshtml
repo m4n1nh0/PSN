@@ -1,0 +1,59 @@
+﻿@model PSN2018.Models.FuncSkill
+
+<div class="form-group">
+    @Html.Label("Atividade", htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-8 col-sm-8 col-xs-12">
+        @*@Html.EditorFor(model => model.intClienteID_FK, new { htmlAttributes = new { @class = "form-control" } })*@
+        @Html.DropDownListFor(model => model.id,
+                                    new SelectList(ViewBag.Skill, "id", "strDsc"),
+                                    "Selecione uma Skill",
+                                    new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.id, "", new { @class = "text-danger" })
+    </div>
+</div>
+<div class="form-group">
+    @Html.LabelFor(model => model.strskill, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-6">
+        @Html.EditorFor(model => model.strskill, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.strskill, "", new { @class = "text-danger" })
+    </div>
+    @Html.LabelFor(model => model.decPerc, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-2">
+        @Html.EditorFor(model => model.decPerc, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.decPerc, "", new { @class = "text-danger" })
+    </div>
+</div>
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <input type="submit" name="BtnAdd" value="Adicionar" class="btn btn-info" />
+    </div>
+</div>
+<div class="center">
+    <div class="col-md-offset-2 col-md-10">
+        <div class="table-responsive">
+            <table class="table table-striped jambo_table bulk_action">
+                <thead>
+                    <tr class="headings">
+                        <th class="column-title">id</th>
+                        <th class="column-title">Skill</th>
+                        <th class="column-title">Nivel</th>
+                        <th class="column-title">Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (PSN2018.Models.FuncSkill item in ViewBag.FuncSkill)
+                    {
+                        <tr class="even pointer">
+                            <td class=" ">@item.id</td>
+                            <td class=" ">@item.strskill<i class="success fa fa-long-arrow-up"></i></td>
+                            <td class=" ">@item.decPerc<i class="success fa fa-long-arrow-up"></i></td>
+                            <td class=" ">@Html.ActionLink("Delete", "Remover", new { DscAtividades = item.id}, new { @class = "fa fa-trash" })</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+

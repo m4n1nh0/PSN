@@ -1,0 +1,77 @@
+﻿@model PSN2018.Models.Funcionario
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+<h3>Excluir esse Funcionário?</h3>
+<div>
+  
+    <div class="row">
+        <div class="col-md-12">
+            <div class="x_panel">
+                <div class="x_content">
+                    <div class="row">
+
+                        <div class="clearfix"></div>
+
+                        <div class="col-md-4 col-sm-4 col-xs-12 profile_details">
+                            <div class="well profile_view">
+                                <div class="col-sm-12">
+                                    <h4 class="brief"><i>Setor de Desenvolvimento</i></h4>
+                                    <div class="left col-xs-7">
+                                        <h2>@Html.DisplayFor(model => model.strCPF)</h2>
+                                        <p><strong>CPF:</strong>@Html.DisplayFor(model => model.strCPF)</p>
+                                        <p><strong>Função: </strong>@Html.DisplayFor(model => model.intFuncaoID_FK) Web Designer / UX / Graphic Artist / Coffee Lover </p>
+
+                                    </div>
+                                    <div class="right col-xs-5 text-center">
+                                        <img src="@Url.Action("Imagem","Logins", new { strCPFCNPJ = @Html.DisplayFor(model => model.strCPF)})" alt="" class="img-circle img-responsive" width="80">
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 bottom text-center">
+                                    <div class="col-xs-12 col-sm-6 emphasis">
+                                        <p class="ratings">
+                                            <table class="table table-striped projects">
+                                                <tr>
+                                                    <td class="project_progress">
+                                                        <div class="progress progress_sm">
+                                                            <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="@Html.DisplayFor(model => model.intAtividades)"></div>
+                                                        </div>
+                                                        <small>@Html.DisplayFor(model => model.intAtividades)% Atividades</small>
+                                                    </td>
+                                                    <td class="project_progress">
+                                                        <div class="progress progress_sm">
+                                                            <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="@Html.DisplayFor(model => model.dblProdutiv)"></div>
+                                                        </div>
+                                                        <small>@Html.DisplayFor(model => model.dblProdutiv)% Produtividade</small>
+                                                    </td>
+
+                                                </tr>
+                                            </table>
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar", "Index", null, new { @class = "btn btn-primary" })
+        </div>
+    }
+    
+</div>
+

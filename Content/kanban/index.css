@@ -1,0 +1,258 @@
+/* General */
+
+html, body, #container { 		
+	margin: 0; 
+	padding: 0;					
+}	
+
+#container{
+	
+}
+
+/* Navbar */
+
+#navbar{
+	position: absolute;
+	width: 100%;
+	min-width: 960px;
+	background: #333;		
+	height: 48px;
+	z-index: 999;		
+}
+
+.dropdown-toggle{
+	text-decoration: none;
+	color: #BBB;
+}
+
+.dropdown-toggle:hover,
+.dropdown-toggle:focus{
+	color: #FFF;
+	text-decoration: none;
+}
+
+#navbar>a, #navbar>li, #navbar>div{	
+	font-size: 16px;
+	color: #BBB;	
+}
+
+#icon{
+	text-align: right;
+	float: right;
+	width: 20%;	
+	padding: 8px;
+	padding-left: 40px;
+}
+
+#title{			
+	float: left;
+	width: 60%;
+	padding-top: 12px;
+	text-align: center;
+}
+
+#menu{	
+	float: left;
+	width: 20%;		
+	list-style: none;
+	margin-left: 0px;	
+	padding-top: 12px;
+	padding-left: 12px;	
+}
+
+#menu>li{
+	float: left !important;	
+}
+
+#menu>li>a{
+	height: 100%;
+	line-height: 100%;
+	vertical-align: middle;
+}
+
+.liWorkspace a{
+	padding-left: 38px !important;	
+}
+
+/* Kanban board */
+
+#kanban {
+    position: relative;
+    width: 100%;
+    /*min-width: 960px;*/
+    padding: 10px 5px 20px 5px;
+    overflow: hidden;
+    height: 100%;
+    border: 1px solid #CCC;
+}
+
+.column{
+	border: 1px solid #CCC;
+	float:left;
+	width: 30%;
+	margin-left: 1%;
+	padding: 1%;		
+	height: 100%;
+}
+
+
+.column .header{
+	height: 10%;
+}
+
+.column .tasksarea{
+	width: 100%;
+	height: 90%;
+	overflow-x: hidden;
+	overflow-y: auto;	
+}
+
+/* Task */
+
+.task{				
+	width: 90%;
+	margin: 0 2% 2% 0;
+	padding: 12px;	
+	display: inline-block;
+	-webkit-box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.2);
+	box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.2);				
+}
+
+h2,  h3{					
+	margin-top: 0px !important;
+}
+
+.task h3{
+	font-size: 1em !important;
+	font-weight: bold !important;
+	word-wrap: break-word;
+	height: 2em;
+	line-height: 1em;
+}
+
+.task p{
+	height: 2em;
+	width: 100%;	
+	font-size: 0.9em;
+	line-height: 1em;
+}
+
+#historyTable td, tr{
+	line-height: 1em;	
+}
+
+#historyTable td{
+	border-top: 2px solid #FFF;
+}
+
+#historyTable{
+	width: 100%;
+}
+
+
+#historyTable .red{
+	background-color: #ffcccc;
+}
+
+#historyTable .yellow{
+	background-color: #ffffcc;
+}
+
+#historyTable .green{
+	background-color: #ccffcc;
+}
+
+.red .task{
+	background-color: #FF9999;
+}
+
+.yellow .task{
+	background-color: #FFFF99;
+}
+
+.green .task{
+	background-color: #99FF99;
+}
+
+.column .header{
+	overflow: hidden;
+}
+
+.column .header h2{
+	float: left;
+}
+
+.column .header button{
+	float: right;
+}
+
+.task-action{
+	cursor: pointer;
+}
+
+.dragged{
+	opacity: 0.5;				
+}
+
+.dragging{
+	-webkit-box-shadow: 8px 8px 0px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: 8px 8px 0px 0px rgba(0,0,0,0.2);
+	box-shadow: 8px 8px 0px 0px rgba(0,0,0,0.2);
+	cursor: pointer;
+}
+
+/* Modal */
+
+#modalContainer{
+	display: none;
+}
+
+#modalBackground{
+	background: black;
+	opacity: 0.5;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.modal{				
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 50%;
+	left: 50%;
+	margin-left: -25%;				
+	top: 25%;				
+}
+
+#modalHistory{
+	width: 80%;
+	margin-left: -40%;
+	height: 80%;		
+	top: 10%;
+}
+
+#modalPreview>div{
+	width:98%;
+	-webkit-box-shadow: 8px 8px 0px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: 8px 8px 0px 0px rgba(0,0,0,0.2);
+	box-shadow: 8px 8px 0px 0px rgba(0,0,0,0.2);
+}
+
+#taskPreviewDescription{
+	max-height: 10em;
+	overflow-x: hidden;
+	overflow-y: auto;	
+}
+
+.required{
+	color: red;
+}
+
+.task-action{
+	display: none;
+	opacity: 0.33;
+}

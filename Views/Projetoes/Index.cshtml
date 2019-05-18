@@ -1,0 +1,112 @@
+﻿@model IEnumerable<PSN2018.Models.Projeto>
+
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Projetos Concluídos ou em Andamento</h2>
+
+    @Html.ActionLink("Novo Projeto", "Create", null, new { @class = "btn btn-primary" })
+
+
+       <!-- page content -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="x_panel">
+                    
+                    <div class="x_content">
+                        
+                        <!-- start project list -->
+                        <table class="table table-striped projects">
+                            <thead>
+                                <tr>
+                                    <th style="width: 1%"></th>
+                                    <th style="width: 20%">Nome do Projeto</th>
+                                    <th>Equipe</th>
+                                    <th>Progresso</th>
+                                    <th>Status</th>
+                                    <th style="width: 20%">#Editar</th>
+                                </tr>
+                            </thead>
+                        @foreach (PSN2018.Controllers.ListProjeto item in ViewBag.Projetos)
+                        {
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <a>@Html.DisplayFor(modelItem => item.strDsc)</a>
+                                        <br />
+                                        <small>Criado em @Html.DisplayFor(modelItem => item.dteCriacao)</small>
+                                    </td>
+                                    <td>
+                                        <label>@Html.DisplayFor(modelItem => item.strNomeEquipe)</label>
+                                        <ul class="list-inline">
+                                            @foreach (PSN2018.Controllers.Equipes caminho in item.Equipe)
+                                            {
+                                                <li>
+                                                    <img src="@Url.Action("Imagem","Logins", new { strCPFCNPJ = caminho.imgCPF })" class="avatar" alt="Avatar">
+                                                </li>
+                                            }
+                                        </ul>
+                                    </td>
+                                    @{ Decimal perc = item.decPercProj;}
+                                    @if (perc < 30)
+                                    {
+                                    <td class="project_progress">
+                                        <div class="progress progress_sm">
+                                            <div class="progress-bar progress-bar-danger" role="progressbar" data-transitiongoal="@Html.DisplayFor(modelItem => item.decPercProj)"></div>
+                                        </div>
+                                        <small>@Html.DisplayFor(modelItem => item.decPercProj)% Em desenvolvimento</small>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger btn-xs">Incompleto</button>
+                                    </td>
+                                    }
+                                    @if (perc > 30 && perc < 100)
+                                    {
+                                        <td class="project_progress">
+                                            <div class="progress progress_sm">
+                                                <div class="progress-bar progress-bar-warning" role="progressbar" data-transitiongoal="@Html.DisplayFor(modelItem => item.decPercProj)"></div>
+                                            </div>
+                                            <small>@Html.DisplayFor(modelItem => item.decPercProj)% Em desenvolvimento</small>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-warning btn-xs">Em andamento</button>
+                                        </td>
+                                    }
+                                    @if (perc ==  100)
+                                    {
+                                        <td class="project_progress">
+                                            <div class="progress progress_sm">
+                                                <div class="progress-bar progress-bar-success" role="progressbar" data-transitiongoal="@Html.DisplayFor(modelItem => item.decPercProj)"></div>
+                                            </div>
+                                            <small>@Html.DisplayFor(modelItem => item.decPercProj)% Completo</small>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-success btn-xs">Concluído</button>
+                                        </td>
+                                    }
+                                    <td>
+                                        <span class="btn btn-default btn-xs dropdown-toggle">
+                                            @Html.ActionLink("Editar", "Edit", new { id = item.id })
+                                        </span> 
+                                        <span class="btn btn-default btn-xs dropdown-toggle">
+                                        @Html.ActionLink("Detalhes", "Details", new { id = item.id })
+                                        </span> 
+                                        <span class="btn btn-default btn-xs dropdown-toggle">
+                                            @Html.ActionLink("Deletar", "Delete", new { id = item.id })
+                                        </span>
+</td>
+                                </tr>
+
+
+
+                            </tbody>
+                        }
+                        </table>
+                        <!-- end project list -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!-- /page content -->

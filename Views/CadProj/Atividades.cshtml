@@ -1,0 +1,114 @@
+﻿@model PSN2018.Models.Atividade
+
+@{
+    ViewBag.Title = "Atividades do projeto";
+
+    AjaxOptions options = new AjaxOptions();
+    options.HttpMethod = "POST";
+    options.InsertionMode = InsertionMode.Replace;
+    options.UpdateTargetId = "divContainer";
+}
+
+<h2>Atividades</h2>
+
+@using (Ajax.BeginForm("CadRAtividades", "CadProj", options))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <hr />
+        <!-- Inicio SmartWizard Content -->
+
+        <div id="wizard" class="form_wizard wizard_horizontal">
+            <ul class="wizard_steps">
+                <li>
+                    <a href="#step-1" class="done" isdone="1">
+                        <span class="step_no">1</span>
+                        <span class="step_descr">
+                            Step 1<br />
+                            <small>Dados e Objetivo</small>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#step-2" class="selected" isdone="1">
+                        <span class="step_no">2</span>
+                        <span class="step_descr">
+                            Step 2<br />
+                            <small>Atividades</small>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#step-3" class="disabled" isdone="0">
+                        <span class="step_no">3</span>
+                        <span class="step_descr">
+                            Step 3<br />
+                            <small>Requisitos</small>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+            <div id="step-2">
+                <form class="form-horizontal form-label-left">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.strDsc, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.strDsc, new { htmlAttributes = new { @class = "form-control" } })
+                            @*@Html.ValidationMessageFor(model => model.strDsc, "", new { @class = "text-danger" })*@
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.intGrauDif, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.intGrauDif, new { htmlAttributes = new { @class = "form-control" } })
+                            @*@Html.ValidationMessageFor(model => model.intGrauDif, "", new { @class = "text-danger" })*@
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" name="BtnAdd" value="Adicionar" class="btn btn-info" />
+                        </div>
+                    </div>                    
+                   <div class="center">
+                       <div class="col-md-offset-2 col-md-10">
+                           <div class="table-responsive">
+                               <table class="table table-striped jambo_table bulk_action">
+                                   <thead>
+                                       <tr class="headings">
+                                           <th class="column-title">Descricão</th>
+                                           <th class="column-title">Grau de Dif</th>
+                                           <th class="column-title">Ação</th>
+                                       </tr>
+                                   </thead>
+                                   <tbody>
+                                       @foreach (PSN2018.Models.AtivProj item in ViewBag.ListAtv)
+                                       {
+                                           <tr class="even pointer">
+                                               <td class=" ">@item.DscAtividades</td>
+                                               <td class=" ">@item.GrauDif<i class="success fa fa-long-arrow-up"></i></td>
+                                               <td class=" ">@Html.ActionLink("Delete", "RemoverAtiv", new { DscAtividades = item.DscAtividades, GrauDif = item.GrauDif }, new { @class = "fa fa-trash" })</td>
+                                           </tr>
+                                       }
+                                   </tbody>
+                               </table>
+                           </div>
+                       </div>
+                   </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" name="BtnPrevious" value="Previous" class="btn btn-info" />
+                            <input type="submit" name="BtnNext" value="Next" class="btn btn-success" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+       
+        }
+
+

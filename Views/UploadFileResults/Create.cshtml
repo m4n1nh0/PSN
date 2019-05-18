@@ -1,0 +1,62 @@
+﻿@model PSN2018.Models.UploadFileResult
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutGentella.cshtml";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm("FileUpload", "UploadFileResults", FormMethod.Post, new {enctype = "multipart/form-data"})) { 
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>UploadFileResult</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control", @id = "txt_name", @Name = "Name" } })
+                @Html.ValidationMessageFor(model => model.Nome, "*", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Caminho, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div>
+                    @Html.EditorFor(model => model.Caminho, new { htmlAttributes = new { @class = "form-control", @id = "file", @Name = "file", @onchange = "show(this)", @type = "file", @title = "search image" } })
+                @*<input type="file" title="search image" id="file" name="file" class="form-control" onchange="show(this)"/>*@
+            </div>
+            <p />
+            <div class="profile_img">
+                <div id="crop-avatar">
+                    <div><img id="user_img" class="img-responsive avatar-view" width="120" height="120" /></div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <script type="text/javascript">
+            function show(input) {
+                if (input.files && input.files[0]) {
+                    var filerdr = new FileReader();
+                    filerdr.onload = function (e) {
+                                        $('#user_img').attr('src', e.target.result);
+                    }
+                    filerdr.readAsDataURL(input.files[0]);
+                }
+            }
+        </script>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

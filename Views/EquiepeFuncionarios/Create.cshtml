@@ -1,0 +1,108 @@
+﻿@model PSN2018.Models.EquiepeFuncionarios
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Nova</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Equipe de Funcionários</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.intEquipeID_FK, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10 col-sm-10 col-xs-12">
+                @Html.DropDownListFor(model => model.intEquipeID_FK,
+                                    new SelectList(ViewBag.Equipe, "id", "strDsc"),
+                                    "Selecione a Equipe",
+                                    new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.intEquipeID_FK, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.intFuncID_FK, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10 col-sm-10 col-xs-12">
+                @Html.DropDownListFor(model => model.intFuncID_FK,
+                                    new SelectList(ViewBag.Funcionario, "id", "strNome"),
+                                    "Selecione o Funcionario",
+                                    new { @class = "form-control" })
+                @*@Html.EditorFor(model => model.intFuncID_FK, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.ValidationMessageFor(model => model.intFuncID_FK, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.strTipo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.strTipo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.strTipo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.intStatus, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.intStatus, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.intStatus, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" name="BtnAdd" value="Adicionar" class="btn btn-info" />
+                <input type="submit" name="BtnRem" value="Deletar" class="btn btn-danger" />
+            </div>
+        </div>
+
+        <div class="center">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="table-responsive">
+                    <table class="table table-striped jambo_table bulk_action">
+                        <thead>
+                            <tr class="headings">
+                                <th class="column-title">Código</th>
+                                <th class="column-title">Equipe</th>
+                                <th class="column-title">Código</th>
+                                <th class="column-title">Funcionario</th>
+                                <th class="column-title">Ação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (PSN2018.Models.FunciEquipe item in ViewBag.EquipeFunc)
+                            {
+                                <tr class="even pointer">
+                                    <td class=" ">@item.intEquipeID_FK</td>
+                                    <td class=" ">@item.strNomeEquipe</td>
+                                    <td class=" ">@item.intFuncID_FK</td>
+                                    <td class=" ">@item.strNomeFunc</td>
+                                    <td class=" ">
+                                        <label><input type="checkbox" name="fEqui" value="@item.intFuncID_FK" />Remover o Funcionário</label>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Cadastrar" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Listar Todas", "Index", null, new { @class = "btn btn-primary" })
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

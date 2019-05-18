@@ -1,0 +1,40 @@
+﻿@model PSN2018.Models.Cliente
+
+@{
+    ViewBag.Title = "Apagar Cliente";
+}
+
+<h2>Deletar</h2>
+
+<h3>Deseja Realmente delatar esse Cliente?</h3>
+<div>
+    <h4>Cliente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.strCPFCNPJ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.strCPFCNPJ)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.strNome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.strNome)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+        </div>
+    }
+</div>

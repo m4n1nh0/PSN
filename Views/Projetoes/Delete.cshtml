@@ -1,0 +1,180 @@
+﻿@model PSN2018.Models.Projeto
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Deletar Projeto</h2>
+
+<h3>Tem certeza que deseja deletar esse projeto?</h3>
+<!--
+<div>
+    <h4>Projeto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Html.DisplayNameFor(model => model.strDsc)
+        </dt>
+
+        <dd>
+            Html.DisplayFor(model => model.strDsc)
+        </dd>
+
+        <dt>
+            Html.DisplayNameFor(model => model.strObjetivo)
+        </dt>
+
+        <dd>
+            Html.DisplayFor(model => model.strObjetivo)
+        </dd>
+
+        <dt>
+            Html.DisplayNameFor(model => model.intClienteID_FK)
+        </dt>
+
+        <dd>
+            Html.DisplayFor(model => model.intClienteID_FK)
+        </dd>
+
+        <dt>
+            Html.DisplayNameFor(model => model.intGPID_FK)
+        </dt>
+
+        <dd>
+            Html.DisplayFor(model => model.intGPID_FK)
+        </dd>
+
+    </dl>
+
+    using (Html.BeginForm()) {
+        Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
+    -->
+
+<!-- page content -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="x_panel">
+
+            <div class="x_content">
+
+                <!-- start project list -->
+                <table class="table table-striped projects">
+                    <thead>
+                        <tr>
+                            <th style="width: 1%"></th>
+                            <th style="width: 20%">Nome do Projeto</th>
+                            <th>Equipe</th>
+                            <th>Progresso</th>
+                            <th>Status</th>
+                            <th style="width: 20%">#Deletar</th>
+                        </tr>
+                    </thead>
+                  
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <a>@Html.DisplayFor(model => model.strDsc)</a>
+                                    <br />
+                                    <small>@Html.DisplayFor(model => model.dteCriacao)</small>
+                                </td>
+                                <td>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <img src="~/Content/imagens/user.png" class="avatar" alt="Avatar">
+                                        </li>
+                                        <li>
+                                            <img src="~/Content/imagens/user.png" class="avatar" alt="Avatar">
+                                        </li>
+                                        <li>
+                                            <img src="~/Content/imagens/user.png" class="avatar" alt="Avatar">
+                                        </li>
+                                        <li>
+                                            <img src="~/Content/imagens/user.png" class="avatar" alt="Avatar">
+                                        </li>
+                                    </ul>
+                                </td>
+                                @{ Decimal perc = @Model.decPercProj;}
+                                @if (perc < 30)
+                                {
+                                <td class="project_progress">
+                                        <div class="progress progress_sm">
+                                            <div class="progress-bar progress-bar-danger" role="progressbar" data-transitiongoal="@Html.DisplayFor(model => model.decPercProj)"></div>
+                                        </div>
+                                        <small>@Html.DisplayFor(model => model.decPercProj)% Incompleto</small>
+                              
+                                    
+                                </td>
+                                <td>
+                                   
+                                        <button type="button" class="btn btn-danger btn-xs">Incompleto</button>
+                              
+                                </td>
+                                }
+                                @if (perc > 30 && perc < 100)
+                                {
+                                    <td class="project_progress">
+                                        <div class="progress progress_sm">
+                                            <div class="progress-bar progress-bar-warning" role="progressbar" data-transitiongoal="@Html.DisplayFor(model => model.decPercProj)"></div>
+                                        </div>
+                                        <small>@Html.DisplayFor(model => model.decPercProj)% Em progresso</small>
+
+                                    </td>
+                                    <td>
+
+                                        <button type="button" class="btn btn-warning btn-xs">Em progresso</button>
+
+                                    </td>
+                                }
+                                @if (perc == 100)
+                                {
+                                    <td class="project_progress">
+
+
+
+
+                                        <div class="progress progress_sm">
+                                            <div class="progress-bar progress-bar-success" role="progressbar" data-transitiongoal="@Html.DisplayFor(model => model.decPercProj)"></div>
+                                        </div>
+                                        <small>@Html.DisplayFor(model => model.decPercProj)% Completo</small>
+
+
+                                    </td>
+                                    <td>
+
+                                        <button type="button" class="btn btn-success btn-xs">Completo</button>
+
+                                    </td>
+                                }
+                                <td>
+                                   @using (Html.BeginForm())
+                                   {
+                                    @Html.AntiForgeryToken()
+
+                                    <div class="form-actions no-color">
+                                        <input type="submit" value="Delete" class="btn btn-default" /> |
+                                        @Html.ActionLink("Back to List", "Index")
+                                    </div>
+                                   }
+                                </td>
+                            </tr>
+
+
+
+                        </tbody>
+                    
+                </table>
+                <!-- end project list -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- /page content -->

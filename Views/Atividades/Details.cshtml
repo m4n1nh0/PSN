@@ -1,0 +1,74 @@
+﻿@model PSN2018.Models.Atividade
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Atividade</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.intGrauDif)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.intGrauDif)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.strDsc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.strDsc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dteDataIni)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dteDataIni)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dteDataFin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dteDataFin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.intStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.intStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.intSprintID_FK)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.intSprintID_FK)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.intFuncID_FK)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.intFuncID_FK)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

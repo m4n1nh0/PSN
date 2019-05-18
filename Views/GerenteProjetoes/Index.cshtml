@@ -1,0 +1,79 @@
+﻿@model IEnumerable<PSN2018.Models.GerenteProjeto>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista de Gerentes de Projetos</h2>
+
+<p>
+    @Html.ActionLink("Adicionar Novo GP", "Create")
+</p>
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="x_panel">
+            <div class="x_content">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                        <ul class="pagination pagination-split">
+                            <li><a href="#">A</a></li>
+                            <li><a href="#">B</a></li>
+                            <li><a href="#">C</a></li>
+                            <li><a href="#">D</a></li>
+                            <li><a href="#">E</a></li>
+                            <li>...</li>
+                            <li><a href="#">W</a></li>
+                            <li><a href="#">X</a></li>
+                            <li><a href="#">Y</a></li>
+                            <li><a href="#">Z</a></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                    
+                    @foreach (var item in Model)
+                    {
+                       
+
+                        <div class="col-md-4 col-sm-4 col-xs-12 profile_details">
+                            <div class="well profile_view">
+                                <div class="col-sm-12">
+                                    <h4 class="brief"><i>Setor que Está alocado</i></h4>
+                                    <div class="left col-xs-7">
+                                        <h2>@Html.DisplayFor(modelItem => item.strNome)</h2>
+                                        <p><strong>CPF:</strong>@Html.DisplayFor(modelItem => item.strCPF)</p>
+                                        <p><strong>Função: </strong> Gerente de Projetos</p>
+
+                                    </div>
+                                    <div class="right col-xs-5 text-center">
+                                        <img src="@Url.Action("Imagem","Logins", new { strCPFCNPJ = item.strCPF })" alt="" class="img-circle img-responsive" width="80">
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 bottom text-center">
+                                    
+                                    <div class="col-xs-12 col-sm-6 emphasis">
+                                        <table class="table table-striped projects">
+                                            <tr>
+                                                <button type="button" class="btn btn-success btn-xs">
+                                                    <i class="fa fa-user">
+                                                    </i> <i class="fa fa-comments-o"></i>
+                                                </button>
+                                                @Html.ActionLink("Editar", "Edit", new {id = item.id }) |
+                                                @Html.ActionLink("Detalhes", "Details", new { id = item.id }) |
+                                                @Html.ActionLink("Deletar", "Delete", new { id = item.id })
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    <!--</table>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

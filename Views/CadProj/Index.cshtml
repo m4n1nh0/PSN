@@ -1,0 +1,121 @@
+﻿@model PSN2018.Models.Projeto
+
+@{
+    ViewBag.Title = "Cadastrar Projeto";
+
+    AjaxOptions options = new AjaxOptions();
+    options.HttpMethod = "POST";
+    options.InsertionMode = InsertionMode.Replace;
+    options.UpdateTargetId = "divContainer";
+}
+
+<h2>Descrição</h2>
+
+    @using (Ajax.BeginForm("CadDetalhesProj", "CadProj", options))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <hr />
+            <!-- Inicio SmartWizard Content -->
+
+            <div id="wizard" class="form_wizard wizard_horizontal">
+                <ul class="wizard_steps">
+                    <li>
+                        <a href="#step-1" class="selected" isdone="1">
+                            <span class="step_no">1</span>
+                            <span class="step_descr">
+                                Step 1<br />
+                                <small>Dados e Objetivo</small>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#step-2" class="disabled" isdone="0">
+                            <span class="step_no">2</span>
+                            <span class="step_descr">
+                                Step 2<br />
+                                <small>Atividades</small>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#step-3" class="disabled" isdone="0">
+                            <span class="step_no">3</span>
+                            <span class="step_descr">
+                                Step 3<br />
+                                <small>Requisitos</small>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+                <div id="step-1">
+                    <form class="form-horizontal form-label-left">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.strDsc, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                @Html.EditorFor(model => model.strDsc, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.strDsc, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.strObjetivo, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                @Html.EditorFor(model => model.strObjetivo, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.strObjetivo, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                      
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.intClienteID_FK, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                @*@Html.EditorFor(model => model.intClienteID_FK, new { htmlAttributes = new { @class = "form-control" } })*@
+                                @Html.DropDownListFor(model => model.intClienteID_FK,
+                                    new SelectList(ViewBag.Clientes, "id", "strNome"),
+                                    "Selecione o Cliente",
+                                    new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.intClienteID_FK, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.intGPID_FK, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                @*@Html.EditorFor(model => model.intGPID_FK, new { htmlAttributes = new { @class = "form-control" } })*@
+                                @Html.DropDownListFor(model => model.intGPID_FK,
+                                    new SelectList(ViewBag.GP, "id", "strNome"),
+                                    "Selecione o Gerente do Projeto",
+                                    new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.intClienteID_FK, "", new { @class = "text-danger" })
+                                @Html.ValidationMessageFor(model => model.intGPID_FK, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+
+                            <div class="col-md-offset-2 col-md-10">
+
+                                <input type="submit" name="BtnNext" value="Next" class="btn btn-success" />
+
+                            </div>
+
+                        </div>
+
+
+                    </form>
+
+                </div>
+
+            </div>
+            </div>
+            <!-- End SmartWizard Content -->
+            }
+
+

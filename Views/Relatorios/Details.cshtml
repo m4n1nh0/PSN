@@ -1,0 +1,42 @@
+﻿@model PSN2018.Models.Relatorio
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Relatorio</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.intReuniaoID_FK)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.intReuniaoID_FK)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.intRelatorioID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.intRelatorioID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.strDsc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.strDsc)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

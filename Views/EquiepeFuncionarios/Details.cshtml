@@ -1,0 +1,50 @@
+﻿@model PSN2018.Models.EquiepeFuncionarios
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>EquiepeFuncionarios</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.intEquipeID_FK)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.intEquipeID_FK)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.intFuncID_FK)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.intFuncID_FK)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.strTipo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.strTipo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.intStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.intStatus)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

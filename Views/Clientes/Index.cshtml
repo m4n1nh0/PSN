@@ -1,0 +1,54 @@
+﻿@model IEnumerable<PSN2018.Models.Cliente>
+
+@{
+    ViewBag.Title = "Lista de Clientes";
+}
+
+<h2>Clientes</h2>
+
+<p>
+    @Html.ActionLink("Novo Cliente", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table table-striped projects">
+    <thead>
+        <tr>
+            <th style="width: 1%">CNPJ/CPF</th>
+            <th style="width: 20%">Razão Social</th>
+        </tr>
+    </thead>
+    
+    @foreach (var item in Model)
+    {
+
+
+
+
+        <tbody>
+            <tr>
+               
+                <td>
+                    @Html.DisplayFor(modelItem => item.strCPFCNPJ)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.strNome)
+                </td>
+                <td>
+<td>
+                    <span class="btn btn-default btn-xs dropdown-toggle">
+                        @Html.ActionLink("Editar", "Edit", new { id = item.id })
+                    </span>
+                    <span class="btn btn-default btn-xs dropdown-toggle">
+                        @Html.ActionLink("Detalhes", "Details", new { id = item.id })
+                    </span>
+                    <span class="btn btn-default btn-xs dropdown-toggle">
+                        @Html.ActionLink("Deletar", "Delete", new { id = item.id })
+                    </span>
+                </td>
+            </tr>
+
+
+
+        </tbody>
+                    }
+
+</table>

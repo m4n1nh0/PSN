@@ -1,0 +1,51 @@
+﻿@model IEnumerable<PSN2018.Models.Chat>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.dteData)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.strCPFCNPJ_Sender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.strCPFCNPJ_Receiver)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.strMensagem)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.dteData)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.strCPFCNPJ_Sender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.strCPFCNPJ_Receiver)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.strMensagem)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

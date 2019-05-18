@@ -1,0 +1,80 @@
+﻿@model PSN2018.Models.Login
+
+@{
+    ViewBag.Title = "Cadastrar";
+}
+
+<h2>Novo</h2>
+
+
+@using (Html.BeginForm("Create", "Logins", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+@Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+        <h4>Acesso</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.strCPFCNPJ, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.strCPFCNPJ, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.strCPFCNPJ, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.strSenha, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.strSenha, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.strSenha, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.intNivel, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.intNivel, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.intNivel, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ImageUrl, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div>@Html.EditorFor(model => model.ImageUrl, new { htmlAttributes = new { @class = "form-control", @id = "file", @Name = "file", @onchange = "show(this)" , @type = "file" ,@title = "search image" } })
+                @*<input type="file" title="search image" id="file" name="file" class="form-control" onchange="show(this)"/>*@</div>
+                <p/>
+                <div class="profile_img">
+                    <div id="crop-avatar">
+                        <div><img id="user_img" class="img-responsive avatar-view" width="120" height="120" /></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <script type="text/javascript">
+                function show(input) {
+    if (input.files && input.files[0]) {
+        var filerdr = new FileReader();
+        filerdr.onload = function (e) {
+                            $('#user_img').attr('src', e.target.result);
+        }
+        filerdr.readAsDataURL(input.files[0]);
+    }
+}
+            </script>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Cadastrar" class="btn btn-success" />
+                </div>
+            </div>
+        </div>
+}
+
+<div>
+    @Html.ActionLink("Listar Todos", "Index", null, new { @class = "btn btn-primary" })
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,308 @@
+﻿@model PSN2018.Models.Funcionario
+
+@{
+    ViewBag.Title = "Details";
+}
+<!--  
+<h2>Details</h2>
+
+<div>
+    <h4>Funcionario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Html.DisplayNameFor(model => model.strCPF)
+        </dt>
+
+        <dd>
+            Html.DisplayFor(model => model.strCPF)
+        </dd>
+
+        <dt>
+            Html.DisplayNameFor(model => model.strNome)
+        </dt>
+
+        <dd>
+            Html.DisplayFor(model => model.strNome)
+        </dd>
+
+        <dt>
+            Html.DisplayNameFor(model => model.dblProdutiv)
+        </dt>
+
+        <dd>
+            Html.DisplayFor(model => model.dblProdutiv)
+        </dd>
+
+        <dt>
+            Html.DisplayNameFor(model => model.intAtividades)
+        </dt>
+
+        <dd>
+            Html.DisplayFor(model => model.intAtividades)
+        </dd>
+
+        <dt>
+            Html.DisplayNameFor(model => model.intFuncaoID_FK)
+        </dt>
+
+        <dd>
+            Html.DisplayFor(model => model.intFuncaoID_FK)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    Html.ActionLink("Back to List", "Index")
+</p>
+
+ -->
+
+ <!-- page content -->
+
+        <div class="page-title">
+            <div class="title_left">
+                <h3>@Html.ActionLink("Voltar", "Index", null, new { @class = "btn btn-primary" })</h3>
+            </div>
+           
+        </div>
+
+        <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Relatórrio Gerencial</h2>
+                        
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <div class="col-md-3 col-sm-3 col-xs-12 profile_left">
+                            <div class="profile_img">
+                                <div id="crop-avatar">
+                                    <!-- Current avatar -->
+                                    <img class="img-responsive avatar-view" src="~/Content/build/images/user.png" alt="Avatar" title="Change the avatar">
+                                </div>
+                            </div>
+                            <h3>@Html.DisplayFor(model => model.strNome)</h3>
+                            <ul class="list-unstyled user_data">
+                                <li>
+                                    <i class="fa fa-map-marker user-profile-icon"></i> Desenvolvedor codigo:@Html.DisplayFor(model => model.intFuncaoID_FK)
+                                </li>
+                                <li>
+                                    <i class="fa fa-briefcase user-profile-icon"></i> Software Engineer
+                                </li>
+                                <li class="m-top-xs">
+                                    <i class="fa fa-external-link user-profile-icon"></i>
+                                    <a href="http://www.kimlabs.com/profile/" target="_blank">www.kimlabs.com</a>
+                                </li>
+                            </ul>
+                            <span class="btn btn-default btn-xs dropdown-toggle">
+                                @Html.ActionLink("Editar", "Edit", new { id = Model.id })
+                            </span> 
+                            <br />
+                            <!-- start skills -->
+                            <h4>Habilidades</h4>
+                            <ul class="list-unstyled user_data">
+                                <li>
+                                    <p>Web Applications</p>
+                                    <div class="progress progress_sm">
+                                        <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="50"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p>Website Design</p>
+                                    <div class="progress progress_sm">
+                                        <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="70"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p>Automation & Testing</p>
+                                    <div class="progress progress_sm">
+                                        <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="30"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p>UI / UX</p>
+                                    <div class="progress progress_sm">
+                                        <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="50"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <!-- end of skills -->
+
+                            <!-- start skills -->
+                            <h4>Relátorio</h4>
+                            <ul class="list-unstyled user_data">
+                                <li>
+                                    <p>Atividades Concluídas</p>
+                                    <div class="progress progress_sm">
+                                        <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="@Html.DisplayFor(model => model.intAtividades)"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p>Produtividade Atual</p>
+                                    <div class="progress progress_sm">
+                                        <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="@Html.DisplayFor(model => model.dblProdutiv)"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <!-- end of skills -->
+                        </div>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <div class="profile_title">
+                                <div class="col-md-6">
+                                    <h2>Agenda</h2>
+                                </div>
+                                <div class="col-md-6">
+                                    <div id="reportrange" class="pull-right" style="margin-top: 5px; background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #E6E9ED">
+                                        <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                                        <span>December 30, 2014 - January 28, 2015</span> <b class="caret"></b>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- start of user-activity-graph -->
+                            <div id="graph_bar" style="width:100%; height:280px;"></div>
+                            <!-- end of user-activity-graph -->
+                            <div class="" role="tabpanel" data-example-id="togglable-tabs">
+                                <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                                    <li role="presentation" class="active">
+                                        <a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Atividades Recentes</a>
+                                    </li>
+                                    <li role="presentation" class="">
+                                        <a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Projetos</a>
+                                    </li>
+                                    <li role="presentation" class="">
+                                        <a href="#tab_content3" role="tab" id="profile-tab2" data-toggle="tab" aria-expanded="false">Sobre</a>
+                                    </li>
+                                </ul>
+                                <div class="col-md-9 col-sm-9 col-xs-12">
+                                    <div class="" role="tabpanel" data-example-id="togglable-tabs">
+                                       
+                                        <div id="myTabContent" class="tab-content">
+                                            <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
+                                                <!-- start recent activity -->
+                                                <ul class="messages">
+                                                    <li>
+
+                                                        <div class="message_date">
+                                                            <h3 class="date text-info">24</h3>
+                                                            <p class="month">Outubro</p>
+                                                        </div>
+                                                        <div class="message_wrapper">
+                                                            <h4 class="heading">Software de Gerenciamento de Projetos</h4>
+                                                            <blockquote class="message">Tela Inicial</blockquote>
+                                                            <br />
+                                                        </div>
+                                                    </li>
+                                                    <li>
+
+                                                        <div class="message_date">
+                                                            <h3 class="date text-info">27</h3>
+                                                            <p class="month">Outubro</p>
+                                                        </div>
+                                                        <div class="message_wrapper">
+                                                            <h4 class="heading">Software de Gerenciamento de Equipes</h4>
+                                                            <blockquote class="message">Adm de Equipes</blockquote>
+                                                            <br />
+                                                        </div>
+                                                    </li>
+                                                    <li>
+
+                                                        <div class="message_date">
+                                                            <h3 class="date text-info">28</h3>
+                                                            <p class="month">Outubro</p>
+                                                        </div>
+                                                        <div class="message_wrapper">
+                                                            <h4 class="heading">Criação de Jogos 3D</h4>
+                                                            <blockquote class="message">Boneco principal concluído com sucesso</blockquote>
+                                                            <br />
+                                                        </div>
+                                                    </li>
+                                                    <li>
+
+                                                        <div class="message_date">
+                                                            <h3 class="date text-info">29</h3>
+                                                            <p class="month">Outubro</p>
+                                                        </div>
+                                                        <div class="message_wrapper">
+                                                            <h4 class="heading">Criação de Logo Marca</h4>
+                                                            <blockquote class="message">Arte visual com cores padrões</blockquote>
+                                                            <br />
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <!-- end recent activity -->
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
+                                                <!-- start user projects -->
+                                                <table class="data table table-striped no-margin">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Projeto</th>
+                                                            <th>Cliente</th>
+                                                            <th>Contribuiçao</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Software de Gerenciamento de Projetos</td>
+                                                            <td>Google</td>
+                                                            <td class="vertical-align-mid">
+                                                                <div class="progress">
+                                                                    <div class="progress-bar progress-bar-success" data-transitiongoal="35"></div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Software de Gerenciamento de Equipes</td>
+                                                            <td>Microsoft</td>
+                                                            <td class="vertical-align-mid">
+                                                                <div class="progress">
+                                                                    <div class="progress-bar progress-bar-danger" data-transitiongoal="15"></div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Criação de Jogos 3D</td>
+                                                            <td>4Technology</td>
+                                                            <td class="vertical-align-mid">
+                                                                <div class="progress">
+                                                                    <div class="progress-bar progress-bar-success" data-transitiongoal="45"></div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+
+                                                            <td>Criação de Logo Marca</td>
+                                                            <td>4Technology</td>
+                                                            <td class="vertical-align-mid">
+                                                                <div class="progress">
+                                                                    <div class="progress-bar progress-bar-success" data-transitiongoal="75"></div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <!-- end user projects -->
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane fade" id="tab_content3" aria-labelledby="profile-tab">
+                                                <p>
+                                                    Graduando em Sistemas de Informação - Unit, membro do GPITIC - Grupo de Pesquisa Interdisciplinar em Tecnologia da Informação e Comunicação, Pesquisador em Planejamento estratégico de TIC, Tomada de decisão e engenharia de software, com experiência na área de Ciência da Computação, com ênfase em Desenvolvimento de Sistemas Para Gerenciamento de Equipes e de Projetos a Distância, atuando principalmente nos seguintes temas: tecnologia da informação, PMI, administração e analise de dados.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!-- /page content -->
+

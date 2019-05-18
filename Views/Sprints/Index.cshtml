@@ -1,0 +1,63 @@
+﻿@model IEnumerable<PSN2018.Models.Sprint>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.intKanbanID_FK)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.intSprintID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.strDsc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dteDataIni)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dteDataFin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.decPerc)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.intKanbanID_FK)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.intSprintID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.strDsc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dteDataIni)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dteDataFin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.decPerc)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
