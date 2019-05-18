@@ -1,0 +1,128 @@
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\roslyn\csc.exe
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\roslyn\csc.exe.config
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\roslyn\csc.rsp
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\roslyn\csi.exe
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\roslyn\csi.rsp
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\roslyn\System.AppContext.dll
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\roslyn\vbc.exe
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\roslyn\vbc.exe.config
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\roslyn\vbc.rsp
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\roslyn\VBCSCompiler.exe
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\PSN2018.dll.config
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\PSN2018.dll
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\PSN2018.pdb
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\Antlr3.Runtime.dll
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\EntityFramework.dll
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\EntityFramework.SqlServer.dll
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\Newtonsoft.Json.dll
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\System.Web.Helpers.dll
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\System.Web.Mvc.dll
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\System.Web.Optimization.dll
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\System.Web.Razor.dll
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\System.Web.WebPages.Deployment.dll
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\System.Web.WebPages.dll
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\System.Web.WebPages.Razor.dll
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\WebGrease.dll
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\Antlr3.Runtime.pdb
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\EntityFramework.xml
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\EntityFramework.SqlServer.xml
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\Newtonsoft.Json.xml
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\System.Web.Helpers.xml
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\System.Web.Mvc.xml
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\System.Web.Optimization.xml
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\System.Web.Razor.xml
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\System.Web.WebPages.xml
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\System.Web.WebPages.Deployment.xml
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\bin\System.Web.WebPages.Razor.xml
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\obj\Debug\PSN2018.Migrations.InitialCreate.resources
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\obj\Debug\PSN2018.Migrations.AtualTabs1.resources
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\obj\Debug\PSN2018.Migrations.AtualTabs2.resources
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\obj\Debug\PSN2018.Migrations.AtualTabs3.resources
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\obj\Debug\PSN2018.csproj.GenerateResource.Cache
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\obj\Debug\PSN2018.dll
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\obj\Debug\PSN2018.pdb
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\obj\Debug\PSN2018.Migrations.AtualTabs4.resources
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\obj\Debug\PSN2018.Migrations.AtualTabs5.resources
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\obj\Debug\PSN2018.Migrations.AtualTabs6.resources
+C:\Users\elisr\OneDrive\documentos\visual studio 2017\Projects\PSN2018\PSN2018\obj\Debug\PSN2018.csprojResolveAssemblyReference.cache
+C:\Users\maria\Downloads\PSN2018\bin\roslyn\csc.exe
+C:\Users\maria\Downloads\PSN2018\bin\roslyn\csc.exe.config
+C:\Users\maria\Downloads\PSN2018\bin\roslyn\csc.rsp
+C:\Users\maria\Downloads\PSN2018\bin\roslyn\csi.exe
+C:\Users\maria\Downloads\PSN2018\bin\roslyn\csi.rsp
+C:\Users\maria\Downloads\PSN2018\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\maria\Downloads\PSN2018\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\maria\Downloads\PSN2018\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\maria\Downloads\PSN2018\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\maria\Downloads\PSN2018\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\maria\Downloads\PSN2018\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\maria\Downloads\PSN2018\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\maria\Downloads\PSN2018\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\maria\Downloads\PSN2018\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\maria\Downloads\PSN2018\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\maria\Downloads\PSN2018\bin\roslyn\System.AppContext.dll
+C:\Users\maria\Downloads\PSN2018\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\maria\Downloads\PSN2018\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\maria\Downloads\PSN2018\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\maria\Downloads\PSN2018\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\maria\Downloads\PSN2018\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\maria\Downloads\PSN2018\bin\roslyn\vbc.exe
+C:\Users\maria\Downloads\PSN2018\bin\roslyn\vbc.exe.config
+C:\Users\maria\Downloads\PSN2018\bin\roslyn\vbc.rsp
+C:\Users\maria\Downloads\PSN2018\bin\roslyn\VBCSCompiler.exe
+C:\Users\maria\Downloads\PSN2018\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\maria\Downloads\PSN2018\bin\PSN2018.dll.config
+C:\Users\maria\Downloads\PSN2018\bin\PSN2018.dll
+C:\Users\maria\Downloads\PSN2018\bin\PSN2018.pdb
+C:\Users\maria\Downloads\PSN2018\bin\Antlr3.Runtime.dll
+C:\Users\maria\Downloads\PSN2018\bin\EntityFramework.dll
+C:\Users\maria\Downloads\PSN2018\bin\EntityFramework.SqlServer.dll
+C:\Users\maria\Downloads\PSN2018\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\maria\Downloads\PSN2018\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\maria\Downloads\PSN2018\bin\Newtonsoft.Json.dll
+C:\Users\maria\Downloads\PSN2018\bin\System.Web.Helpers.dll
+C:\Users\maria\Downloads\PSN2018\bin\System.Web.Mvc.dll
+C:\Users\maria\Downloads\PSN2018\bin\System.Web.Optimization.dll
+C:\Users\maria\Downloads\PSN2018\bin\System.Web.Razor.dll
+C:\Users\maria\Downloads\PSN2018\bin\System.Web.WebPages.Deployment.dll
+C:\Users\maria\Downloads\PSN2018\bin\System.Web.WebPages.dll
+C:\Users\maria\Downloads\PSN2018\bin\System.Web.WebPages.Razor.dll
+C:\Users\maria\Downloads\PSN2018\bin\WebGrease.dll
+C:\Users\maria\Downloads\PSN2018\bin\Antlr3.Runtime.pdb
+C:\Users\maria\Downloads\PSN2018\bin\EntityFramework.xml
+C:\Users\maria\Downloads\PSN2018\bin\EntityFramework.SqlServer.xml
+C:\Users\maria\Downloads\PSN2018\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\maria\Downloads\PSN2018\bin\Newtonsoft.Json.xml
+C:\Users\maria\Downloads\PSN2018\bin\System.Web.Helpers.xml
+C:\Users\maria\Downloads\PSN2018\bin\System.Web.Mvc.xml
+C:\Users\maria\Downloads\PSN2018\bin\System.Web.Optimization.xml
+C:\Users\maria\Downloads\PSN2018\bin\System.Web.Razor.xml
+C:\Users\maria\Downloads\PSN2018\bin\System.Web.WebPages.xml
+C:\Users\maria\Downloads\PSN2018\bin\System.Web.WebPages.Deployment.xml
+C:\Users\maria\Downloads\PSN2018\bin\System.Web.WebPages.Razor.xml
+C:\Users\maria\Downloads\PSN2018\obj\Debug\PSN2018.csproj.CoreCompileInputs.cache
+C:\Users\maria\Downloads\PSN2018\obj\Debug\PSN2018.csproj.CopyComplete
+C:\Users\maria\Downloads\PSN2018\obj\Debug\PSN2018.dll
+C:\Users\maria\Downloads\PSN2018\obj\Debug\PSN2018.pdb
+C:\Users\maria\Downloads\PSN2018\obj\Debug\PSN2018.csprojAssemblyReference.cache
+C:\Users\maria\Downloads\PSN2018\obj\Debug\PSN2018.Migrations.initial1.resources
+C:\Users\maria\Downloads\PSN2018\obj\Debug\PSN2018.csproj.GenerateResource.cache
